@@ -11,7 +11,7 @@ def format_output(output):
 
     # Split the output into lines and add indentation
     lines = output.strip().split("\n")
-    formatted_output = "\n".join(f"    {line}" for line in lines)
+    formatted_output = "\n".join(f"{line}" for line in lines)
     return formatted_output
 
 commands = [
@@ -29,7 +29,7 @@ def run_random_command():
 
     try:
         # Run the command in a subprocess for 10 seconds
-        process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        process = subprocess.Popen(command.split(), stdout=subprocess.PIPE, stderr=subprocess.PIPE, encoding='utf8')
         if(command == "mpv https://www.dailymotion.com/video/x7xtdoc -vo=null -v"):
             time.sleep(10)
         sleep_time = random.uniform(8,15)
