@@ -19,11 +19,11 @@ try:
 except ImportError:
     
     class ConfigClass:  # minimal config incase you don't have the config.py
-        MAX_DEPTH = 10  # dive no deeper than this for each root URL
-        MIN_DEPTH = 3   # dive at least this deep into each root URL
-        MAX_WAIT = 10   # maximum amount of time to wait between HTTP requests
-        MIN_WAIT = 5    # minimum amount of time allowed between HTTP requests
-        DEBUG = False    # set to True to enable useful console output
+        MAX_DEPTH = 100  # dive no deeper than this for each root URL
+        MIN_DEPTH = 10   # dive at least this deep into each root URL
+        MAX_WAIT = 0   # maximum amount of time to wait between HTTP requests
+        MIN_WAIT = 0    # minimum amount of time allowed between HTTP requests
+        DEBUG = True    # set to True to enable useful console output
 
         # use this single item list to test how a site responds to this crawler
         # be sure to comment out the list below it.
@@ -34,8 +34,6 @@ except ImportError:
 
         # items can be a URL "https://t.co" or simple string to check for "amazon"
         blacklist = [
-            'facebook.com',
-            'pinterest.com'
         ]
 
         # must use a valid user agent or sites will hate you
@@ -81,10 +79,10 @@ def do_request(url):
     headers = {'user-agent': config.USER_AGENT}
 
     try:
-        r = requests.get(url, headers=headers, timeout=5)
+        r = requests.get(url, headers=headers, timeout=1)
     except:
         # Prevent 100% CPU loop in a net down situation
-        time.sleep(30)
+        time.sleep(3)
         return False
 
     page_size = len(r.content)
@@ -101,8 +99,8 @@ def do_request(url):
         if (status == 429):
             debug_print(
                 "  We're making requests too frequently... sleeping longer...")
-            config.MIN_WAIT += 10
-            config.MAX_WAIT += 10
+            config.MIN_WAIT += 2
+            config.MAX_WAIT += 2
     else:
         good_requests += 1
 
