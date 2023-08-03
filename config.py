@@ -2,7 +2,7 @@ MAX_DEPTH = 100  # maximum click depth
 MIN_DEPTH = 50 # minimum click depth
 MAX_WAIT = 1  # maximum amount of time to wait between HTTP requests
 MIN_WAIT = 0  # minimum amount of time allowed between HTTP requests
-DEBUG = False  # set to True to enable useful console output
+DEBUG = True  # set to True to enable useful console output
 
 # use this single item list to test how a site responds to this crawler
 # be sure to comment out the list below it.
