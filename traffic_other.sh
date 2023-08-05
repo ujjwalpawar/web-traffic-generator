@@ -1,11 +1,11 @@
 #!/bin/bash
 
-timeout 6 mpv https://www.dailymotion.com/video/x7eklbf --vo=null -v
+timeout 600 mpv https://www.dailymotion.com/video/x7eklbf --vo=null -v > logs_video
 
-sleep 3
+sleep 30
 
-timeout 6 wget -o- https://speed.hetzner.de/1GB.bin
+timeout 600 wget -o- https://speed.hetzner.de/1GB.bin > logs_wget
 
-sleep 3
+sleep 30
 
-timeout 6 python gen.py
+timeout 600 python gen.py > logs_web
