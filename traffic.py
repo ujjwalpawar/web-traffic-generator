@@ -23,7 +23,7 @@ commands = [
     "wget https://speed.hetzner.de/1GB.bin 2>&1 | tee -a wget_log",
     "mpv https://www.dailymotion.com/video/x7xtdoc -vo=null -v",
     "python gen.py"
-    "scp d1GB.bin 192.168.1.10:."
+    "scp ../d1GB.bin 192.168.1.10:."
 ]
 
 def run_random_command():
