@@ -4,7 +4,7 @@ import time
 import sys
 import random
 
-random.seed(int(sys.argv[1])+1)
+random.seed(int(sys.argv[2]))
 port = str(5201+int(sys.argv[1]))
 varying = bool(sys.argv[2])
 # List of random Linux commands
