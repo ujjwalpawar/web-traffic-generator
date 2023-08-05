@@ -1,6 +1,6 @@
 #!/bin/bash
 
-timeout 600 mpv https://www.dailymotion.com/video/x7eklbf --vo=null -v > logs_video
+timeout 600 mpv https://www.dailymotion.com/video/x7eklbf --vo=null -v | tee install.log
 
 sleep 30
 
