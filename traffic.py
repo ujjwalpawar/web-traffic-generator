@@ -3,7 +3,7 @@ import subprocess
 import time
 import sys
 import random
-random.seed(1)
+random.seed(int(sys.argv[1]))
 
 port = str(5201+int(sys.argv[1]))
 varying = bool(sys.argv[2])
@@ -11,7 +11,7 @@ varying = bool(sys.argv[2])
 def format_output(output):
     if not output:
         return "No output"
-
+    
     # Split the output into lines and add indentation
     lines = output.strip().split("\n")
     formatted_output = "\n".join(f"{line}" for line in lines)
