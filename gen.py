@@ -14,32 +14,7 @@ import requests
 import re
 import time
 import random
-try:
-    import config
-except ImportError:
-    
-    class ConfigClass:  # minimal config incase you don't have the config.py
-        MAX_DEPTH = 100  # dive no deeper than this for each root URL
-        MIN_DEPTH = 10   # dive at least this deep into each root URL
-        MAX_WAIT = 0   # maximum amount of time to wait between HTTP requests
-        MIN_WAIT = 0    # minimum amount of time allowed between HTTP requests
-        DEBUG = True    # set to True to enable useful console output
-
-        # use this single item list to test how a site responds to this crawler
-        # be sure to comment out the list below it.
-        #ROOT_URLS = ["https://digg.com/"]
-        ROOT_URLS = [
-            "https://www.reddit.com"
-        ]
-
-        # items can be a URL "https://t.co" or simple string to check for "amazon"
-        blacklist = [
-        ]
-
-        # must use a valid user agent or sites will hate you
-        USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_3) ' \
-            'AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36'
-    config = ConfigClass
+import config
 
 
 class Colors:

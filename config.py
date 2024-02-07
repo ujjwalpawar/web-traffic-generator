@@ -9,13 +9,22 @@ DEBUG = True  # set to True to enable useful console output
 #ROOT_URLS = ["https:///digg.com/"]
 
 ROOT_URLS = [
-	
 	"http://www.cnn.com",
 	"https://en.wikipedia.org/wiki/Main_Page",
-	"https://austin.craigslist.org/"
+	"https://austin.craigslist.org/",
+        "https://www.bing.com/news/",
+        "https://www.bbc.co.uk/news",
+        "https://news.sky.com/uk",
+        "https://www.dailymail.co.uk/news/index.html",
+        "https://www.theguardian.com/tone/news",
+        "https://news.ycombinator.com/",
+        "https://www.reddit.com",
+
 	]
 
 
+#        "https://en.wikipedia.org/wiki/Main_Page",
+#        "https://austin.craigslist.org/"
 # items can be a URL "https://t.co" or simple string to check for "amazon"
 blacklist = [
 	"https://t.co", 
